@@ -7,20 +7,21 @@ import {
   repos,
   leadership,
   getInTouch,
-  experiences
+  experiences,
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
+import OurServices from "./components/home/Services.jsx"; 
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-//import Skills from "./components/home/Skills";
-// import { Blog } from "./components/blog/Blog";
+import Whoweare from "./components/home/ProjectCard.jsx";
 // import BlogPost from "./components/blog/BlogPost";
 import GetInTouch from "./components/home/GetInTouch.jsx";
 import Leadership from "./components/home/Leadership.jsx";
+//import Container from 'react-bootstrap/Container'; // Optional: Using Bootstrap for layout
 
-import Experience from "./components/home/Experience";
+import Experience from "./components/home/Services.jsx";
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -75,15 +76,21 @@ const App = () => {
       {navBar.show && <Navbar ref={titleRef} />}
       <Routes>
         <Route path="/" exact element={<Home ref={titleRef} />} />
+        {/* Add the new route for Our Services */}
+        <Route path="/services" exact element={<OurServices />} /> 
+        {/* Additional routes */}
+        <Route path="/getintouch" exact element={<GetInTouch />} />
+        <Route path="/whoweare" exact element={<Whoweare />} />
       </Routes>
-      {/* {false && <Route path="/blog" exact component={Blog} />}
-      {false && <Route path="/blog/:id" component={BlogPost} />} */}
       <Footer>
+        {/* Example of conditionally rendering components */}
         {getInTouch.show && (
           <GetInTouch
             heading={getInTouch.heading}
             message={getInTouch.message}
             email={getInTouch.email}
+            phone={getInTouch.phone}
+            weChat={getInTouch.weChat}
           />
         )}
       </Footer>

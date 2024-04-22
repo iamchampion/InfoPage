@@ -32,12 +32,12 @@ const Navigation = React.forwardRef((props, ref) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Item>
-            <Nav.Link as={Link} to="/GetInTouch">
+            <Nav.Link as={Link} to="/whoweare">
               Who We Are
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link as={Link} to="/GetInTouch">
+            <Nav.Link as={Link} to="/services">
               Our Services
             </Nav.Link>
           </Nav.Item>
